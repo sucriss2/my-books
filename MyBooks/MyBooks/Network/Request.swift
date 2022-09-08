@@ -8,10 +8,9 @@
 import Foundation
 
 enum RequestMethod: String {
-    case create = "CREATE"
-    case read = "READ"
-    case update = "UPDATE"
-    case delete = "DELETE"
+    case get = "GET"
+    case post = "POST"
+
 }
 
 struct Request {
