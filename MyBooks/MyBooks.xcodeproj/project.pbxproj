@@ -11,6 +11,8 @@
 		8C6D7BBE28CA317A00692083 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D7BBD28CA317A00692083 /* ContentView.swift */; };
 		8C6D7BC028CA317C00692083 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C6D7BBF28CA317C00692083 /* Assets.xcassets */; };
 		8C6D7BC328CA317C00692083 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C6D7BC228CA317C00692083 /* Preview Assets.xcassets */; };
+		8C6D7BCC28CA329400692083 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D7BCB28CA329400692083 /* Network.swift */; };
+		8C6D7BD028CA3C0100692083 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D7BCF28CA3C0100692083 /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		8C6D7BBD28CA317A00692083 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8C6D7BBF28CA317C00692083 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C6D7BC228CA317C00692083 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8C6D7BCB28CA329400692083 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		8C6D7BCF28CA3C0100692083 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				8C6D7BBB28CA317A00692083 /* MyBooksApp.swift */,
 				8C6D7BBD28CA317A00692083 /* ContentView.swift */,
+				8C6D7BCF28CA3C0100692083 /* Request.swift */,
+				8C6D7BCB28CA329400692083 /* Network.swift */,
 				8C6D7BBF28CA317C00692083 /* Assets.xcassets */,
 				8C6D7BC128CA317C00692083 /* Preview Content */,
 			);
@@ -77,6 +83,7 @@
 				8C6D7BB428CA317A00692083 /* Sources */,
 				8C6D7BB528CA317A00692083 /* Frameworks */,
 				8C6D7BB628CA317A00692083 /* Resources */,
+				8C6D7BCE28CA369A00692083 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -132,6 +139,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8C6D7BCE28CA369A00692083 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8C6D7BB428CA317A00692083 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -139,6 +166,8 @@
 			files = (
 				8C6D7BBE28CA317A00692083 /* ContentView.swift in Sources */,
 				8C6D7BBC28CA317A00692083 /* MyBooksApp.swift in Sources */,
+				8C6D7BD028CA3C0100692083 /* Request.swift in Sources */,
+				8C6D7BCC28CA329400692083 /* Network.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
