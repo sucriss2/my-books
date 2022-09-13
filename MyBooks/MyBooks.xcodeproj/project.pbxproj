@@ -16,6 +16,7 @@
 		8C6D7BD228CA5F3400692083 /* LibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D7BD128CA5F3400692083 /* LibraryService.swift */; };
 		8C6D7BD428CA62E200692083 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D7BD328CA62E200692083 /* Library.swift */; };
 		8C6D7BD628CA633D00692083 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D7BD528CA633D00692083 /* Book.swift */; };
+		8C6D7C2728CFBFCB00692083 /* BookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D7C2628CFBFCB00692083 /* BookManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		8C6D7BD128CA5F3400692083 /* LibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryService.swift; sourceTree = "<group>"; };
 		8C6D7BD328CA62E200692083 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		8C6D7BD528CA633D00692083 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		8C6D7C2628CFBFCB00692083 /* BookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			children = (
 				8C6D7BBB28CA317A00692083 /* MyBooksApp.swift */,
 				8C6D7BBD28CA317A00692083 /* ContentView.swift */,
+				8C6D7C2628CFBFCB00692083 /* BookManager.swift */,
 				8C6D7BD928CABB5D00692083 /* Service */,
 				8C6D7BD828CA80D500692083 /* Network */,
 				8C6D7BD728CA80BC00692083 /* Models */,
@@ -199,6 +202,7 @@
 			files = (
 				8C6D7BBE28CA317A00692083 /* ContentView.swift in Sources */,
 				8C6D7BBC28CA317A00692083 /* MyBooksApp.swift in Sources */,
+				8C6D7C2728CFBFCB00692083 /* BookManager.swift in Sources */,
 				8C6D7BD628CA633D00692083 /* Book.swift in Sources */,
 				8C6D7BD228CA5F3400692083 /* LibraryService.swift in Sources */,
 				8C6D7BD028CA3C0100692083 /* Request.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Book: Decodable {
+struct Book: Codable {
     let codeID: String
     let title: String
     let author: String

@@ -3,7 +3,7 @@
 //  MyBooks
 //
 //  Created by Suh on 08/09/22.
-//
+// swiftlint: disable line_length
 
 import Foundation
 
