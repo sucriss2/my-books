@@ -1,14 +1,14 @@
 //
-//  BookManager.swift
-//  Test-Sandbox
+//  BooksManager.swift
+//  MyBooks
 //
 //  Created by Suh on 10/09/22.
-//
 
 import Foundation
 
 class BooksManager {
-    private(set) var books: [Book] = []
+    var books: [Book] = []
+
     private let manager = FileManager.default
 
     private var filePath: URL {
@@ -21,7 +21,7 @@ class BooksManager {
     }
 
     func add(book: Book) {
-        if findBook(id: book.codeID).isEmpty {
+        if findBook(id: book.id).isEmpty {
             books.append(book)
             savebooks()
         }
@@ -30,7 +30,7 @@ class BooksManager {
 
     func findBook(id: String) -> [Book] {
         let books = books.filter { element in
-            return element.codeID == id
+            return element.id == id
         }
         return books
 
@@ -39,7 +39,7 @@ class BooksManager {
     func deleteBook(id: String) {
         if findBook(id: id).isEmpty == false {
             for (index, value) in books.enumerated() {
-                if value.codeID == id {
+                if value.id == id {
                     books.remove(at: index)
                     print(index)
                     savebooks()
