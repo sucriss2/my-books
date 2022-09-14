@@ -9,7 +9,6 @@ import Foundation
 import Combine
 
 class MyBookViewModel: ObservableObject {
-
     @Published var books: [Book] = []
     var bookManager = BooksManager()
 

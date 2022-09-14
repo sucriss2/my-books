@@ -13,17 +13,14 @@ struct MyBookRow: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(book.title)
-            Text("Autor: \(book.author)")
+            Text("Autor:  \(book.author)")
         }
     }
 }
 
 struct MyBookRow_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            MyBookRow(book: .fixture())
-            MyBookRow(book: Book.fixture())
-        }
+        MyBookRow(book: .fixture())
         .previewLayout(.fixed(width: 300, height: 70))
     }
 }
