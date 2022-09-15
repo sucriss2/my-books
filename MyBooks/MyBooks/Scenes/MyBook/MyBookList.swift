@@ -23,11 +23,18 @@ struct MyBookList: View {
                 self.viewModel.fetchBooks()
             }
 
-            Button(action: { showBookDetail = true }) {
-                Text("Adicionar Livro")
+            Button {
+                print("++++++++++++++")
+            } label: {
+                Text("Biblioteca")
                     .font(.title)
             }
-            NavigationLink("", destination: BookDetail(), isActive: $showBookDetail)
+            .foregroundColor(.white)
+            .tint(.mint)
+            .buttonStyle(.borderedProminent)
+            .buttonBorderShape(.roundedRectangle)
+
+            // NavigationLink("", destination: BookDetail(), isActive: $showBookDetail)
 
             Spacer()
         }
