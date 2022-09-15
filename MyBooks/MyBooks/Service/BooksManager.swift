@@ -20,6 +20,11 @@ class BooksManager {
         loadBooks()
     }
 
+    func removeAll() {
+        books.removeAll()
+        savebooks()
+    }
+
     func add(book: Book) {
         if findBook(id: book.id).isEmpty {
             books.append(book)

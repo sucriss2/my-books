@@ -6,19 +6,31 @@
 
 import SwiftUI
 
-struct MyBookList: View {
+struct MyBookListView: View {
     @StateObject var viewModel: MyBookViewModel = MyBookViewModel()
     @State private var showBookDetail = false
 
     var body: some View {
         VStack {
             NavigationView {
-                List(viewModel.books, id: \.id) { book in
-                    MyBookRow(book: book)
-                }
-                .navigationTitle("Minha Lista")
+                Group {
+                    if viewModel.haveNoBooks {
+                        Text(
+                            """
+                                    Biblioteca vazia!
+                            Chique e adicione livros.
+                            """)
+                            .foregroundColor(.gray)
+                            .font(.title)
+                    } else {
+                        List(viewModel.books, id: \.id) { book in
+                            MyBookRow(book: book)
+                        }
+                    }
+                }.navigationTitle("Minha Lista")
 
-            }.listStyle(.plain)
+            }
+            .listStyle(.plain)
             .onAppear {
                 self.viewModel.fetchBooks()
             }
@@ -44,6 +56,6 @@ struct MyBookList: View {
 
 struct MyBookList_Previews: PreviewProvider {
     static var previews: some View {
-        MyBookList()
+        MyBookListView()
     }
 }

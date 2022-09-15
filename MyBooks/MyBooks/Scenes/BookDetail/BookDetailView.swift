@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BookDetail: View {
+struct BookDetailView: View {
     var body: some View {
         VStack {
             VStack {
@@ -85,6 +85,6 @@ struct BookDetail: View {
 
 struct BookDetail_Previews: PreviewProvider {
     static var previews: some View {
-        BookDetail()
+        BookDetailView()
     }
 }
