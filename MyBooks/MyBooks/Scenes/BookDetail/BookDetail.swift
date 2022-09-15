@@ -9,7 +9,23 @@ import SwiftUI
 
 struct BookDetail: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Detalhes do Livro")
+                .font(.title)
+            Text("Detalhes do Livro")
+                .font(.title)
+            Text("Detalhes do Livro")
+                .font(.title)
+            Text("Detalhes do Livro")
+                .font(.title)
+            Text("Detalhes do Livro")
+                .font(.title)
+            Text("Detalhes do Livro")
+                .font(.title)
+            Text("Detalhes do Livro")
+                .font(.title)
+        }
+        .padding()
     }
 }
 
