@@ -1,5 +1,5 @@
 //
-//  MyBookList.swift
+//  MyBookListView.swift
 //  MyBooks
 //
 //  Created by Suh on 14/09/22.
@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct MyBookListView: View {
-    @StateObject var viewModel: MyBookViewModel = MyBookViewModel()
+    @StateObject var viewModel: MyBookListViewModel = MyBookListViewModel()
     @State private var showBookDetail = false
 
     var body: some View {

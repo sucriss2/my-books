@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct BookDetailView: View {
+    @StateObject var viewModel: BookDetailViewModel = BookDetailViewModel()
+
     var body: some View {
         VStack {
             VStack {
                 VStack(alignment: .center) {
-                    Text("Detalhes")
+                    Text(viewModel.book.title)
                         .foregroundColor(.mint)
                         .font(.largeTitle)
                 }
@@ -25,27 +27,27 @@ struct BookDetailView: View {
                 Divider()
                 HStack {
                     VStack(alignment: .center) {
-                        Text("AUTOR")
-                            .font(.title2)
-                        Text("Suelen Vaz")
-                            .font(.title)
+                        Text("AUTOR").font(.caption).bold()
+                        Text(viewModel.book.author)
+                            .font(.title3)
                             .foregroundColor(.mint)
                     }
+                    .padding()
 
                     Divider()
                     VStack(alignment: .center) {
-                        Text("GENRE")
-                            .font(.title2)
-                        Text("Biografia")
-                            .font(.title)
+                        Text("GENRE").font(.caption).bold()
+                        Text(viewModel.book.genre)
+                            .font(.title3)
                             .foregroundColor(.mint)
                     }
+                    .padding()
+
                     Divider()
                     VStack(alignment: .center) {
-                        Text("PAGE")
-                            .font(.title2)
-                        Text("500")
-                            .font(.title)
+                        Text("PAGE").font(.caption).bold()
+                        Text(String(viewModel.book.page))
+                            .font(.caption2)
                             .foregroundColor(.mint)
                     }
                     .padding()
@@ -59,7 +61,7 @@ struct BookDetailView: View {
 
                     Text("Descrição do Livro")
                         .font(.title)
-                    Text("Lorem ipsum dolor sit amet. Ea magni magni sed cupiditate distinctio et natus amet 33 commodi dolor. Id unde illum vel vitae itaque id ipsum doloremque sit dolorem voluptatum ut facilis officia eum accusamus maiores. Vel quibusdam dolores qui eaque itaque in rerum recusandae. Ut Quis quaerat non cumque porro vel magni inventore et assumenda aspernatur. Est temporibus sint non quos error et eius perspiciatis aut nisi natus aut quidem molestiae sit odit dolores 33 commodi velit. Aut dolores assumenda eum excepturi voluptates sed excepturi consectetur non fuga doloribus id quaerat perspiciatis ut quam modi. Ut dolorem inventore eos eaque nihil eum omnis cupiditate aut officiis libero ea voluptatibus autem qui saepe esse?")
+                    Text(viewModel.book.description)
                         .font(.title2)
                         .multilineTextAlignment(.center)
                 } .padding()
