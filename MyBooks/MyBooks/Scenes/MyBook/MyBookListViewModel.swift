@@ -1,5 +1,5 @@
 //
-//  MyBookViewModel.swift
+//  MyBookListViewModel.swift
 //  MyBooks
 //
 //  Created by Suh on 14/09/22.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class MyBookViewModel: ObservableObject {
+class MyBookListViewModel: ObservableObject {
     @Published var books: [Book] = []
     @Published var haveNoBooks: Bool = true
 
