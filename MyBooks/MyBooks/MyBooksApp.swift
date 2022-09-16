@@ -11,7 +11,7 @@ import SwiftUI
 struct MyBooksApp: App {
     var body: some Scene {
         WindowGroup {
-            MyBookListView()
+            LibraryView()
         }
     }
 }

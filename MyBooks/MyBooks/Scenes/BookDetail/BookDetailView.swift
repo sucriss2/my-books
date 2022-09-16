@@ -22,7 +22,7 @@ struct BookDetailView: View {
                         .frame(height: 50)
 
                     Image("book-pages")
-                        .shadow(color: .mint, radius: 2, x: 3, y: 3)
+                        .foregroundColor(.black)
                         .frame(width: 50, height: 50, alignment: .center)
                     Spacer()
                         .frame(height: 50)
