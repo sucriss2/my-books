@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct MyBooksApp: App {
+
+    let booksManager = BooksManager()
+
     var body: some Scene {
         WindowGroup {
-            LibraryView()
+            MyBookListView(viewModel: MyBookListViewModel(booksManager: booksManager))
         }
     }
 }

@@ -7,8 +7,9 @@
 import SwiftUI
 
 struct MyBookListView: View {
-    @StateObject var viewModel: MyBookListViewModel = MyBookListViewModel()
-    @State private var showBookDetail = false
+    @StateObject var viewModel: MyBookListViewModel
+
+    @State private var isShowingLibrary = false
 
     var body: some View {
         VStack {
@@ -56,6 +57,8 @@ struct MyBookListView: View {
                     .tint(.mint)
                     .buttonStyle(.borderedProminent)
                     .buttonBorderShape(.roundedRectangle)
+
+                    // NavigationLink(destination: <#T##Destination#>, isActive: $isShowingLibrary)
                 }.padding()
 
             }
@@ -68,8 +71,8 @@ struct MyBookListView: View {
 
 }
 
-struct MyBookList_Previews: PreviewProvider {
-    static var previews: some View {
-        MyBookListView()
-    }
-}
+// struct MyBookList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MyBookListView()
+//    }
+//}
