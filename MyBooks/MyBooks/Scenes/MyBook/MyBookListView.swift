@@ -62,7 +62,6 @@ struct MyBookListView: View {
             .listStyle(.plain)
             .onAppear {
                 self.viewModel.fetchBooks()
-
             }
         }
     }

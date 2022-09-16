@@ -3,14 +3,14 @@
 //  MyBooks
 //
 //  Created by Suh on 15/09/22.
-// swiftlint: disable line_length
 
 import Foundation
 
 class BookDetailViewModel: ObservableObject {
     let book: Book
     let booksManager: BooksManager
-    @Published var isFavorite: Bool
+    @Published var buttonTitle: String = "Adicionar"
+    @Published var isFavorite: Bool = false
 
     var bookTitle: String {
         book.title
@@ -35,8 +35,21 @@ class BookDetailViewModel: ObservableObject {
     init(book: Book, booksManager: BooksManager) {
         self.book = book
         self.booksManager = booksManager
+        update()
+    }
+
+    func addOrRemoveBook() {
+        if booksManager.findBook(id: book.id).isEmpty {
+            booksManager.add(book: book)
+        } else {
+            booksManager.deleteBook(id: book.id)
+        }
+        update()
+    }
+
+    private func update() {
         isFavorite = booksManager.findBook(id: book.id).isEmpty == false
+        buttonTitle = isFavorite ? "Remover" : "Adicionar"
     }
 
 }
-

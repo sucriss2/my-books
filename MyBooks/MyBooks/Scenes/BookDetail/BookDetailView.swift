@@ -39,9 +39,9 @@ struct BookDetailView: View {
             }
 
             Button {
-                print("") // Se vier da minha lista (EXCLUIR LIVRO) else (ADICIONAR)
+                viewModel.addOrRemoveBook()
             } label: {
-                Text("Excluir ")
+                Text(viewModel.buttonTitle)
                     .font(.title2)
             }
             .foregroundColor(.black)
