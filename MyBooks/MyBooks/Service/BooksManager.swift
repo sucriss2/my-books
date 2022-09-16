@@ -16,6 +16,10 @@ class BooksManager {
         return urlDirectories[0].appendingPathComponent("mybooks.json")
     }
 
+    init(books: [Book]) { // init debug only
+        self.books = books
+    }
+
     init() {
         loadBooks()
     }

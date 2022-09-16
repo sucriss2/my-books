@@ -13,42 +13,57 @@ struct MyBookListView: View {
     var body: some View {
         VStack {
             NavigationView {
-                Group {
-                    if viewModel.haveNoBooks {
-                        Text(
-                            """
-                                    Biblioteca vazia!
-                            Chique e adicione livros.
-                            """)
-                            .foregroundColor(.gray)
-                            .font(.title)
-                    } else {
-                        List(viewModel.books, id: \.id) { book in
-                            MyBookRow(book: book)
+                VStack(alignment: .center) {
+                    Text(" Meus Livros ")
+                        .font(.largeTitle)
+                        .shadow(color: .black, radius: 1, x: 1, y: 1)
+                        .foregroundColor(.mint)
+
+                    Spacer()
+
+                    Group {
+                        if viewModel.haveNoBooks {
+                            Text(
+                                """
+                                        Biblioteca vazia!
+                                Chique e adicione livros.
+                                """)
+                                .foregroundColor(.gray)
+                                .font(.title)
+                        } else {
+                            List(viewModel.books, id: \.id) { book in
+                                NavigationLink {
+                                    BookDetailView(
+                                        viewModel: viewModel.makeBookDetailViewModel(book: book)
+                                    )
+                                } label: {
+                                    MyBookRow(book: book)
+                                }
+                            }
                         }
+
                     }
-                }.navigationTitle("Minha Lista")
+
+                    Spacer(minLength: 50)
+
+                    Button {
+                        print("++++++++++++++")
+                    } label: {
+                        Text("Biblioteca")
+                            .font(.title2)
+                    }
+                    .foregroundColor(.white)
+                    .tint(.mint)
+                    .buttonStyle(.borderedProminent)
+                    .buttonBorderShape(.roundedRectangle)
+                }.padding()
 
             }
             .listStyle(.plain)
             .onAppear {
                 self.viewModel.fetchBooks()
+
             }
-
-            Button {
-                print("++++++++++++++")
-            } label: {
-                Text("Biblioteca")
-                    .font(.title)
-            }
-            .foregroundColor(.white)
-            .tint(.mint)
-            .buttonStyle(.borderedProminent)
-            .buttonBorderShape(.roundedRectangle)
-
-            // NavigationLink("", destination: BookDetail(), isActive: $showBookDetail)
-
-            Spacer()
         }
     }
 

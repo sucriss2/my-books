@@ -29,3 +29,9 @@ class MyBookListViewModel: ObservableObject {
     }
 
 }
+
+extension MyBookListViewModel {
+    func makeBookDetailViewModel(book: Book) -> BookDetailViewModel {
+        BookDetailViewModel(book: book, booksManager: bookManager)
+    }
+}
