@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct DetailView: View {
-    @StateObject var viewModel: BookDetailViewModel = BookDetailViewModel()
+    let author: String
+    let genre: String
+    let page: String
+    let description: String
 
     var body: some View {
         VStack {
@@ -16,7 +19,7 @@ struct DetailView: View {
             HStack {
                 VStack(alignment: .center) {
                     Text("AUTOR").font(.caption).bold()
-                    Text(viewModel.book.author)
+                    Text(author)
                         .font(.title3)
                         .foregroundColor(.mint)
                 }
@@ -25,7 +28,7 @@ struct DetailView: View {
                 Divider()
                 VStack(alignment: .center) {
                     Text("GENRE").font(.caption).bold()
-                    Text(viewModel.book.genre)
+                    Text(genre)
                         .font(.title3)
                         .foregroundColor(.mint)
                 }
@@ -34,7 +37,7 @@ struct DetailView: View {
                 Divider()
                 VStack(alignment: .center) {
                     Text("PAGE").font(.caption).bold()
-                    Text(String(viewModel.book.page))
+                    Text(page)
                         .font(.title3)
                         .foregroundColor(.mint)
                 }
@@ -45,35 +48,26 @@ struct DetailView: View {
             Divider()
             Spacer()
                 .frame(height: 10)
-            VStack(alignment: .center, spacing: 10.0) {
 
+            VStack(alignment: .center, spacing: 10.0) {
                 Text("Descrição do Livro")
                     .font(.title2)
-                Text(viewModel.book.description)
+                Text(description)
                     .font(.title3)
                     .multilineTextAlignment(.center)
-            } .padding()
-
-            Spacer()
-
-            Button {
-                print("") // Se vier da minha lista (EXCLUIR LIVRO) else (ADICIONAR)
-            } label: {
-                Text("Adicionar ")
-                    .font(.title)
-
             }
-            .foregroundColor(.black)
-            .tint(.mint)
-            .buttonStyle(.borderedProminent)
-            .buttonBorderShape(.roundedRectangle)
-
         }
     }
+
 }
 
 struct Detail_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(viewModel: BookDetailViewModel())
+        DetailView(
+            author: "Susuuuuuu",
+            genre: "ficção",
+            page: "33",
+            description: "bla bla bla"
+        )
     }
 }

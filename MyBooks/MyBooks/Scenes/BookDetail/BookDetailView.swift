@@ -3,7 +3,6 @@
 //  MyBooks
 //
 //  Created by Suh on 14/09/22.
-// swiftlint: disable line_length
 
 import SwiftUI
 
@@ -11,21 +10,42 @@ struct BookDetailView: View {
     @StateObject var viewModel: BookDetailViewModel = BookDetailViewModel()
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .center) {
-                Text(viewModel.book.title)
-                    .foregroundColor(.mint)
-                    .font(.title)
+        VStack {
+            ScrollView {
+                VStack(alignment: .center) {
+                    Text(viewModel.bookTitle)
+                        .foregroundColor(.mint)
+                        .font(.title)
+
+                    Spacer()
+                        .frame(height: 50)
+                    Image("book-pages")
+                    Spacer()
+                        .frame(height: 50)
+
+                    DetailView(
+                        author: viewModel.bookAuthor,
+                        genre: viewModel.bookGenre,
+                        page: viewModel.bookPage,
+                        description: viewModel.bookDescription
+                    )
+
+                }
+                .padding()
             }
-            Spacer()
-                .frame(height: 50)
-            Image("book-pages")
-            Spacer()
-                .frame(height: 50)
-            VStack {
-                DetailView(viewModel: viewModel)
+
+            Button {
+                print("") // Se vier da minha lista (EXCLUIR LIVRO) else (ADICIONAR)
+            } label: {
+                Text("Adicionar ")
+                    .font(.title2)
             }
-            .padding()
+            .foregroundColor(.black)
+            .tint(.mint)
+            .buttonStyle(.borderedProminent)
+            .buttonBorderShape(.roundedRectangle)
+            .padding(.init(top: 8, leading: 0, bottom: 0, trailing: 0))
+
         }
     }
 }
