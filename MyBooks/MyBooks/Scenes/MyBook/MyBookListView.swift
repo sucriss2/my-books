@@ -14,7 +14,7 @@ struct MyBookListView: View {
         VStack {
             NavigationView {
                 VStack(alignment: .center) {
-                    Text(" Meus Livros ")
+                    Text("Meus Livros")
                         .font(.largeTitle)
                         .shadow(color: .black, radius: 1, x: 1, y: 1)
                         .foregroundColor(.mint)
@@ -59,10 +59,16 @@ struct MyBookListView: View {
                     .buttonStyle(.borderedProminent)
                     .buttonBorderShape(.roundedRectangle)
 
-                    NavigationLink("", isActive: $isShowingLibrary) {
-                        LibraryView(viewModel: viewModel.makeLibraryViewModel())
-                    }
+//                    NavigationLink("", isActive: $isShowingLibrary) {
+//                        LibraryView(viewModel: viewModel.makeLibraryViewModel())
+//                    }
                 }.padding()
+                    .sheet(isPresented: $isShowingLibrary) {
+                        LibraryView(viewModel: viewModel.makeLibraryViewModel())
+                            .onDisappear {
+                                viewModel.fetchBooks()
+                            }
+                    }
             }
             .listStyle(.plain)
             .onAppear {

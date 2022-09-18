@@ -10,8 +10,8 @@ struct LibraryView: View {
     @StateObject var viewModel: LibraryViewModel
 
     var body: some View {
-            VStack {
-
+        NavigationView {
+            Group {
                 if viewModel.isLoading {
                     Text("Carregando...")
                 } else if viewModel.errorLibrary {
@@ -32,10 +32,10 @@ struct LibraryView: View {
                         }
                     }
                 }
-            }
-            .navigationTitle("Biblioteca")
-            .onAppear {
-                viewModel.fetchBooks()
+            }.navigationBarTitle("Biblioteca")
+        }
+        .onAppear {
+            viewModel.fetchBooks()
         }
     }
 
