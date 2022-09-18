@@ -7,10 +7,13 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class LibraryViewModel: ObservableObject {
     @Published var books: [Book] = []
     @Published var haveNoBooks: Bool = true
+    @Published var errorLibrary: Bool = false
+    @Published var isLoading: Bool = true
 
     let booksManager: BooksManager
     let libraryService: LibraryService
@@ -21,6 +24,8 @@ class LibraryViewModel: ObservableObject {
     }
 
     func fetchBooks() {
+        errorLibrary = false
+        isLoading = true
         libraryService.fetchBooks { library in
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else {
@@ -28,9 +33,13 @@ class LibraryViewModel: ObservableObject {
                 }
                 self.books = library.books
                 self.haveNoBooks = self.books.isEmpty
+                self.isLoading = false
             }
-        } onError: { _ in
-            print("Error")
+        } onError: { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.errorLibrary = true
+                self?.isLoading = false
+            }
         }
     }
 

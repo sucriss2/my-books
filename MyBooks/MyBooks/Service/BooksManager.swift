@@ -51,12 +51,10 @@ class BooksManager {
             for (index, value) in books.enumerated() {
                 if value.id == id {
                     books.remove(at: index)
-                    print(index)
                     savebooks()
                 }
             }
         }
-        // livro não deletado
     }
 
     private func loadBooks() {

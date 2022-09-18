@@ -8,7 +8,6 @@ import SwiftUI
 
 struct MyBookListView: View {
     @StateObject var viewModel: MyBookListViewModel
-
     @State private var isShowingLibrary = false
 
     var body: some View {
@@ -27,7 +26,7 @@ struct MyBookListView: View {
                             Text(
                                 """
                                         Biblioteca vazia!
-                                Chique e adicione livros.
+                                Clique e adicione livros.
                                 """)
                                 .foregroundColor(.gray)
                                 .font(.title)
@@ -62,8 +61,6 @@ struct MyBookListView: View {
                         LibraryView(viewModel: viewModel.makeLibraryViewModel())
                     }
                 }.padding()
-                
-
             }
             .listStyle(.plain)
             .onAppear {

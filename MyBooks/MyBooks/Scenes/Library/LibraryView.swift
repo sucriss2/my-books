@@ -11,13 +11,25 @@ struct LibraryView: View {
 
     var body: some View {
             VStack {
-                List(viewModel.books, id: \.id) { book in
-                    NavigationLink {
-                        BookDetailView(
-                            viewModel: viewModel.makeBookDetailViewModel(book: book)
-                        )
-                    } label: {
-                        MyBookRow(book: book)
+
+                if viewModel.isLoading {
+                    Text("Carregando...")
+                } else if viewModel.errorLibrary {
+                    ErrorView(
+                        message: "Houve algum erro",
+                        buttonTitle: "Tente novamente!"
+                    ) {
+                        viewModel.fetchBooks()
+                    }
+                } else {
+                    List(viewModel.books, id: \.id) { book in
+                        NavigationLink {
+                            BookDetailView(
+                                viewModel: viewModel.makeBookDetailViewModel(book: book)
+                            )
+                        } label: {
+                            MyBookRow(book: book)
+                        }
                     }
                 }
             }
@@ -28,8 +40,3 @@ struct LibraryView: View {
     }
 
 }
-// struct LibraryView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LibraryView()
-//    }
-// }

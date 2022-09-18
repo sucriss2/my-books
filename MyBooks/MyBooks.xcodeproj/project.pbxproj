@@ -24,6 +24,7 @@
 		8C6D7BD628CA633D00692083 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D7BD528CA633D00692083 /* Book.swift */; };
 		8C6D7C2728CFBFCB00692083 /* BooksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D7C2628CFBFCB00692083 /* BooksManager.swift */; };
 		8C9D0E5A28D50DF70065480C /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D0E5928D50DF70065480C /* LibraryViewModel.swift */; };
+		8CD20D2A28D799F4006AE9A8 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD20D2928D799F4006AE9A8 /* ErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		8C6D7BD528CA633D00692083 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		8C6D7C2628CFBFCB00692083 /* BooksManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksManager.swift; sourceTree = "<group>"; };
 		8C9D0E5928D50DF70065480C /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
+		8CD20D2928D799F4006AE9A8 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		8C2CDCCA28D5047100BED199 /* ViewsGeneric */ = {
 			isa = PBXGroup;
 			children = (
+				8CD20D2928D799F4006AE9A8 /* ErrorView.swift */,
 				8C35211628D24BC000C1C0E5 /* MyBookRow.swift */,
 			);
 			path = ViewsGeneric;
@@ -272,6 +275,7 @@
 				8C6D7BD028CA3C0100692083 /* Request.swift in Sources */,
 				8C35211728D24BC000C1C0E5 /* MyBookRow.swift in Sources */,
 				8C6D7BCC28CA329400692083 /* Network.swift in Sources */,
+				8CD20D2A28D799F4006AE9A8 /* ErrorView.swift in Sources */,
 				8C6D7BD428CA62E200692083 /* Library.swift in Sources */,
 				8C2CDCC028D2A55700BED199 /* BookDetailView.swift in Sources */,
 				8C9D0E5A28D50DF70065480C /* LibraryViewModel.swift in Sources */,
