@@ -42,10 +42,10 @@ struct BookDetailView: View {
                 viewModel.addOrRemoveBook()
             } label: {
                 Text(viewModel.buttonTitle)
-                    .font(.title2)
+                    .font(.title3)
             }
-            .foregroundColor(.black)
-            .tint(.mint)
+            .foregroundColor(.white)
+            .tint(viewModel.isFavorite ? .red : .mint)
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.roundedRectangle)
             .padding(.init(top: 8, leading: 0, bottom: 0, trailing: 0))

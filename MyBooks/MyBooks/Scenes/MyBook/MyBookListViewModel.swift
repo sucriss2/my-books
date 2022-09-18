@@ -13,9 +13,18 @@ class MyBookListViewModel: ObservableObject {
     @Published var haveNoBooks: Bool = true
 
     var booksManager: BooksManager
+    var cancellable: [AnyCancellable] = []
 
     init(booksManager: BooksManager) {
         self.booksManager = booksManager
+
+        booksManager
+            .$books
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] values in
+                self?.books = values
+            }
+            .store(in: &cancellable)
     }
 
     func fetchBooks() {
@@ -37,5 +46,10 @@ class MyBookListViewModel: ObservableObject {
 extension MyBookListViewModel {
     func makeBookDetailViewModel(book: Book) -> BookDetailViewModel {
         BookDetailViewModel(book: book, booksManager: booksManager)
+    }
+
+    func makeLibraryViewModel() -> LibraryViewModel {
+        let libraryService = LibraryService()
+        return LibraryViewModel(booksManager: booksManager, libraryService: libraryService)
     }
 }

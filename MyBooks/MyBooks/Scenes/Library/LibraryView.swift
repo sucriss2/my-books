@@ -10,7 +10,6 @@ struct LibraryView: View {
     @StateObject var viewModel: LibraryViewModel
 
     var body: some View {
-        NavigationView {
             VStack {
                 List(viewModel.books, id: \.id) { book in
                     NavigationLink {
@@ -23,9 +22,8 @@ struct LibraryView: View {
                 }
             }
             .navigationTitle("Biblioteca")
-        }
-        .onAppear {
-            viewModel.fetchBooks()
+            .onAppear {
+                viewModel.fetchBooks()
         }
     }
 

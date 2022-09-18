@@ -5,9 +5,10 @@
 //  Created by Suh on 10/09/22.
 
 import Foundation
+import Combine
 
 class BooksManager {
-    var books: [Book] = []
+    @Published var books: [Book] = []
 
     private let manager = FileManager.default
 

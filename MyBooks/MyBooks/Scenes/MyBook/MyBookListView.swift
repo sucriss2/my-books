@@ -48,7 +48,7 @@ struct MyBookListView: View {
                     Spacer(minLength: 50)
 
                     Button {
-                        print("++++++++++++++")
+                        isShowingLibrary = true
                     } label: {
                         Text("Biblioteca")
                             .font(.title2)
@@ -58,14 +58,18 @@ struct MyBookListView: View {
                     .buttonStyle(.borderedProminent)
                     .buttonBorderShape(.roundedRectangle)
 
-                    // NavigationLink(destination: <#T##Destination#>, isActive: $isShowingLibrary)
+                    NavigationLink("", isActive: $isShowingLibrary) {
+                        LibraryView(viewModel: viewModel.makeLibraryViewModel())
+                    }
                 }.padding()
+                
 
             }
             .listStyle(.plain)
             .onAppear {
                 self.viewModel.fetchBooks()
             }
+
         }
     }
 
@@ -75,4 +79,4 @@ struct MyBookListView: View {
 //    static var previews: some View {
 //        MyBookListView()
 //    }
-//}
+// }

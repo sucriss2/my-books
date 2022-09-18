@@ -5,6 +5,7 @@
 //  Created by Suh on 15/09/22.
 
 import Foundation
+import SwiftUI
 
 class BookDetailViewModel: ObservableObject {
     let book: Book

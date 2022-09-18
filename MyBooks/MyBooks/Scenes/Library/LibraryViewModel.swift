@@ -12,11 +12,11 @@ class LibraryViewModel: ObservableObject {
     @Published var books: [Book] = []
     @Published var haveNoBooks: Bool = true
 
-    let bookManager: BooksManager
+    let booksManager: BooksManager
     let libraryService: LibraryService
 
-    init(bookManager: BooksManager, libraryService: LibraryService) {
-        self.bookManager = bookManager
+    init(booksManager: BooksManager, libraryService: LibraryService) {
+        self.booksManager = booksManager
         self.libraryService = libraryService
     }
 
@@ -38,6 +38,6 @@ class LibraryViewModel: ObservableObject {
 
 extension LibraryViewModel {
     func makeBookDetailViewModel(book: Book) -> BookDetailViewModel {
-        BookDetailViewModel(book: book, booksManager: bookManager)
+        BookDetailViewModel(book: book, booksManager: booksManager)
     }
 }
