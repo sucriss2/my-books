@@ -8,7 +8,7 @@ import Foundation
 import Combine
 
 class BooksManager {
-    @Published var books: [Book] = []
+    var books: [Book] = []
 
     private let manager = FileManager.default
 

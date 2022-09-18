@@ -35,7 +35,9 @@ struct MyBookListView: View {
                                 NavigationLink {
                                     BookDetailView(
                                         viewModel: viewModel.makeBookDetailViewModel(book: book)
-                                    )
+                                    ).onDisappear {
+                                        viewModel.fetchBooks()
+                                    }
                                 } label: {
                                     MyBookRow(book: book)
                                 }
