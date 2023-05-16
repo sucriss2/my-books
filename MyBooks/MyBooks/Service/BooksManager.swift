@@ -43,18 +43,20 @@ class BooksManager {
             return element.id == id
         }
         return books
-
     }
 
     func deleteBook(id: String) {
-        if findBook(id: id).isEmpty == false {
-            for (index, value) in books.enumerated() {
-                if value.id == id {
-                    books.remove(at: index)
-                    savebooks()
-                }
-            }
+        if findBook(id: id).isEmpty {
+            return
         }
+
+        for (index, value) in books.enumerated() where value.id == id {
+            books.remove(at: index)
+            savebooks()
+        }
+
+        // books = books.filter { $0.id != id }
+
     }
 
     private func loadBooks() {
