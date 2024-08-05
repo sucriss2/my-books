@@ -1,4 +1,4 @@
-Desafio Técnico iOS JR - >> Klever <<
+Desafio Técnico iOS JR 
 
 *Faça um clone desse repositorio.
 *E rodar o app.
